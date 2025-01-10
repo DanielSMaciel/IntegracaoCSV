@@ -1,9 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.12.35527.113 d17.12
+VisualStudioVersion = 17.12.35527.113
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegracaoCSV", "IntegracaoCSV\IntegracaoCSV.csproj", "{66340FEE-9487-4E8B-9C70-F7D2DB61B7D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegracaoCSV.Core", "IntegracaoCSV.Core\IntegracaoCSV.Core.csproj", "{D6A9E5C9-38D0-43AF-BB62-838C3DACED94}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegracaoCSV.Infra", "IntegracaoCSV.Infra\IntegracaoCSV.Infra.csproj", "{4323DCD9-9964-48AD-A515-1A532F9CD6D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{66340FEE-9487-4E8B-9C70-F7D2DB61B7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{66340FEE-9487-4E8B-9C70-F7D2DB61B7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{66340FEE-9487-4E8B-9C70-F7D2DB61B7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6A9E5C9-38D0-43AF-BB62-838C3DACED94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6A9E5C9-38D0-43AF-BB62-838C3DACED94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6A9E5C9-38D0-43AF-BB62-838C3DACED94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6A9E5C9-38D0-43AF-BB62-838C3DACED94}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4323DCD9-9964-48AD-A515-1A532F9CD6D1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4323DCD9-9964-48AD-A515-1A532F9CD6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4323DCD9-9964-48AD-A515-1A532F9CD6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4323DCD9-9964-48AD-A515-1A532F9CD6D1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

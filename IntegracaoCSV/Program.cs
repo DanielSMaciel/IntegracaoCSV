@@ -1,4 +1,9 @@
 
+using IntegracaoCSV.Core.UseCase;
+using IntegracaoCSV.Infra;
+using IntegracaoCSV.Infra.Repository;
+using Microsoft.AspNetCore.Http.Features;
+
 namespace IntegracaoCSV
 {
     public class Program
@@ -7,14 +12,22 @@ namespace IntegracaoCSV
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
 
+            builder.Services.Configure<FormOptions>(options =>
+            {
+                options.MultipartBodyLengthLimit = 10 * 1024 * 1024;
+            });
+
+            builder.Services.AddTransient<IntegraFilmesIndicados>();
+
+            builder.Services.AddTransient<IIntegracaoCSVRepository, IntegracaoCSVRepository>();
+
             var app = builder.Build();
+
+            DatabaseInitializer.InitializeDatabase();
 
             // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
