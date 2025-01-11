@@ -16,7 +16,6 @@ namespace IntegracaoCSV.Core.UseCase
         {
             var conteudoLinhasArquivo = arquivoTxt.ToString().Split("\\n");
 
-
             var indiceColunas = conteudoLinhasArquivo[0].Split(";");
 
             (string, int)[] arrayColuna = new (string, int)[indiceColunas.Length];
@@ -29,11 +28,7 @@ namespace IntegracaoCSV.Core.UseCase
             for (int i = 1; i < conteudoLinhasArquivo.Length; i++)
             {
                 var linha = conteudoLinhasArquivo[i].Trim();
-                if (string.IsNullOrEmpty(linha))
-                {
-                    var a = "";
-                }
-                else
+                if (!string.IsNullOrEmpty(linha))
                 {
                     var arrayLinha = linha.Split(";");
                     var indicado = new FilmesIndicados(arrayLinha[0], arrayLinha[1], arrayLinha[2], arrayLinha[3], arrayLinha[4] == "yes" ? 1 : 0);

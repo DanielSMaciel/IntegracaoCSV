@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegracaoCSV.Core", "Integ
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegracaoCSV.Infra", "IntegracaoCSV.Infra\IntegracaoCSV.Infra.csproj", "{4323DCD9-9964-48AD-A515-1A532F9CD6D1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntegracaoCSV.Test", "IntegracaoCSV.Test\IntegracaoCSV.Test.csproj", "{8A6CF42C-2DC2-4553-8DFE-B31C1FD68982}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{4323DCD9-9964-48AD-A515-1A532F9CD6D1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4323DCD9-9964-48AD-A515-1A532F9CD6D1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4323DCD9-9964-48AD-A515-1A532F9CD6D1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A6CF42C-2DC2-4553-8DFE-B31C1FD68982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A6CF42C-2DC2-4553-8DFE-B31C1FD68982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A6CF42C-2DC2-4553-8DFE-B31C1FD68982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A6CF42C-2DC2-4553-8DFE-B31C1FD68982}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

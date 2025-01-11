@@ -10,5 +10,7 @@ namespace IntegracaoCSV.Infra.Repository
     public interface IIntegracaoCSVRepository
     {
         Task AdicionaFilmeIndicado(FilmesIndicados filme);
+
+        Task<List<FilmesIndicados>> RetornaFilmesIndicados();
     }
 }

@@ -1,4 +1,5 @@
 using System.Text;
+using IntegracaoCSV.Core.Models;
 using IntegracaoCSV.Core.UseCase;
 using IntegracaoCSV.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -7,22 +8,18 @@ namespace IntegracaoCSV.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class IntegracaoArquivoController : ControllerBase
+    public class IndicadosPiorFilmeController : ControllerBase
     {
-        private static readonly string[] Summaries = new[]
-        {
-            "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
-        };
+        private readonly ILogger<IndicadosPiorFilmeController> _logger;
 
-        private readonly ILogger<IntegracaoArquivoController> _logger;
-
-        public IntegracaoArquivoController(ILogger<IntegracaoArquivoController> logger)
+        public IndicadosPiorFilmeController(ILogger<IndicadosPiorFilmeController> logger)
         {
             _logger = logger;
         }
 
-        [HttpPost]
-        public async Task<IActionResult> PostIntegraArquivo([FromForm] PostIntegraArquivoRequest request, [FromServices] IntegraFilmesIndicados useCaseIntegraFilmesIndicados)
+        [HttpPost("/IntegracaoPorArquivo")]
+        public async Task<IActionResult> PostIntegraFilmesIndicados([FromForm] PostIntegraArquivoRequest request,
+            [FromServices] IntegraFilmesIndicados useCaseIntegraFilmesIndicados)
         {
             if (request.Arquivo.Length == 0)
             {
@@ -49,15 +46,9 @@ namespace IntegracaoCSV.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<WeatherForecast> Get()
+        public async Task<FilmesIndicadosResponse> GetFilmesIndicados([FromServices] RetornaFilmesIndicados useCaseRetornaFilmesIndicados)
         {
-            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
-            {
-                Date = DateOnly.FromDateTime(DateTime.Now.AddDays(index)),
-                TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
-            })
-            .ToArray();
+            return await useCaseRetornaFilmesIndicados.Execute();
         }
     }
 }

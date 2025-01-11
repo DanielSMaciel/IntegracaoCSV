@@ -21,10 +21,11 @@ namespace IntegracaoCSV
                 options.MultipartBodyLengthLimit = 10 * 1024 * 1024;
             });
 
-            builder.Services.AddTransient<IntegraFilmesIndicados>();
-
             builder.Services.AddTransient<IIntegracaoCSVRepository, IntegracaoCSVRepository>();
 
+            builder.Services.AddTransient<IntegraFilmesIndicados>();
+            builder.Services.AddTransient<RetornaFilmesIndicados>();
+            
             var app = builder.Build();
 
             DatabaseInitializer.InitializeDatabase();
